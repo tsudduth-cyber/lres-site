@@ -8,42 +8,41 @@ const team = [
   {
     name: "Philip M. Lang",
     role: "President",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80",
-  },
+  image: "/images/pl head.png"  },
   {
     name: "Kelly Z. Austin",
     role: "CFO",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80",
+  image: "/images/kelly head.png"
   },
   {
     name: "Matt Miller",
     role: "Vice President of Brokerage & Leasing",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=80",
+    image: "/images/matt head.png",
   },
   {
     name: "Jon Vogt",
     role: "Director of Operations",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
+    image: "/images/jon head.png",
   },
   {
     name: "Maria Smith",
     role: "Senior Property Manager",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80",
+    image: "/images/maria head.png",
   },
   {
     name: "Dani Clowers",
     role: "Senior Property Manager",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80",
+    image: "/images/dani head.png",
   },
   {
     name: "Evelyn Tiseth",
     role: "Senior Property Manager",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80",
+    image: "/images/evelyn head.png",
   },
   {
-    name: "Erin Murray",
+    name: "Nick Bloodgood",
     role: "Property Manager",
-    image: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80",
+    image: "/images/nick head.png",
   },
 ];
 
