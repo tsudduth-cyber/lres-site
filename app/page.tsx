@@ -92,7 +92,7 @@ const properties = [
   },
 ];
 
-function Stat({ value, label }) {
+function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/10 px-5 py-4 backdrop-blur text-center">
       <div className="text-2xl font-semibold tracking-tight text-white">{value}</div>
@@ -159,7 +159,19 @@ function HeroSection() {
   );
 }
 
-function PropertyCard({ city, type, size, label, image }) {
+function PropertyCard({
+  city,
+  type,
+  size,
+  label,
+  image,
+}: {
+  city: string;
+  type: string;
+  size: string;
+  label: string;
+  image: string;
+}) {
   return (
     <div className="group overflow-hidden rounded-3xl border border-zinc-300 bg-white shadow-sm shadow-zinc-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
       <div className="relative h-80 overflow-hidden bg-zinc-900">
