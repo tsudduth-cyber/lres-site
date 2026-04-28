@@ -27,7 +27,7 @@ const team = [
   {
     name: "Maria Smith",
     role: "Senior Property Manager",
-    image: "/images/maria head.png",
+    image: "/images/Maria head.png",
   },
   {
     name: "Dani Clowers",
