@@ -110,7 +110,7 @@ function HeroSection() {
         poster="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1800&q=80"
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/videos/dallas-drone.mp4" type="video/mp4" />
+        <source src="/videos/newesthero.mp4" type="video/mp4" />
       </video>
       <img
         src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1800&q=80"
