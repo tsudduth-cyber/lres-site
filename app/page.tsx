@@ -177,8 +177,7 @@ function PropertyCard({
         <img
           src={image}
           alt={`${city} ${type}`}
-          className="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
-        />
+className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 group-hover:brightness-110"        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5 transition duration-500 group-hover:from-black/70 group-hover:via-black/20" />
 
 
@@ -275,8 +274,7 @@ export default function LangConcepts() {
         <img
           src={service.image}
           alt={service.title}
-          className="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
-        />
+className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"        />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10 transition duration-500 group-hover:from-white group-hover:via-white group-hover:to-white" />
 
@@ -340,8 +338,7 @@ export default function LangConcepts() {
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="absolute inset-0 h-full w-full object-cover object-center grayscale-[70%] transition duration-700 group-hover:scale-105 group-hover:contrast-110 group-hover:brightness-105"
-                  />
+className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 group-hover:scale-105 group-hover:brightness-105"                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent transition duration-500 group-hover:from-black/25" />
                   <div className="absolute bottom-0 left-5 right-5 h-px bg-red-500/0 transition duration-300 group-hover:bg-red-500/70" />
                 </div>
