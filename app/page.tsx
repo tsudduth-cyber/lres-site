@@ -118,8 +118,8 @@ function HeroSection() {
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
 
-   <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent" />
+<div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
 
       <div className="absolute left-6 right-6 top-6 z-10 md:left-10 md:right-10">
         <div className="text-xs uppercase tracking-widest text-white/70">
