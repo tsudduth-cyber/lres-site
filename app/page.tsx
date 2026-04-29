@@ -178,7 +178,7 @@ function PropertyCard({
           src={image}
           alt={`${city} ${type}`}
 className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 group-hover:brightness-110"        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5 transition duration-500 group-hover:from-black/70 group-hover:via-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/20 to-transparent transition duration-500 group-hover:from-black/70 group-hover:via-black/20" />
 
 
 
@@ -232,7 +232,7 @@ export default function LangConcepts() {
   return (
     <main className="min-h-screen bg-[#eeeeec] text-zinc-900">
       <section className="relative overflow-hidden px-6 py-6 md:px-10 text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2a2725] to-[#3a342f]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2a2725] via-[#3a342f] to-[#4a443f]" />
         {/* bottom fade to transition into neutral page background */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[420px] bg-gradient-to-b from-transparent via-[#eeeeec]/55 to-[#eeeeec]" />
 
@@ -276,7 +276,7 @@ export default function LangConcepts() {
           alt={service.title}
 className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"        />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10 transition duration-500 group-hover:from-white group-hover:via-white group-hover:to-white" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/30 to-transparent transition duration-500 group-hover:from-white group-hover:via-white group-hover:to-white" />
 
         {/* visible title */}
         <div className="absolute inset-x-0 bottom-0 z-10 p-7 text-center text-white transition duration-500 group-hover:opacity-0">
