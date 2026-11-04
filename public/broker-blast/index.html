@@ -1,0 +1,87 @@
+
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LRES Availabilities</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Libre+Franklin:wght@400;600;700&display=swap">
+<style>
+/* Single-column email, centered on a grey ground; deliberate single light theme because it mirrors what lands in a broker's inbox */
+:root{--ground:#EDEDED;--paper:#FFFFFF;--ink:#1A1A1A;--muted:#555555;--rule:#DDDDDD;--red:#ED1C24;--band:#F5F5F5;
+--serif:'Libre Caslon Text',Georgia,serif;--sans:'Libre Franklin',Arial,sans-serif;color-scheme:light}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);padding-block:20px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mail{max-width:640px;margin:0 auto;background:var(--paper)}
+.redbar{height:6px;background:var(--red)}
+header{padding:36px 32px 24px;display:flex;flex-direction:column;align-items:center;gap:20px}
+header img{width:210px}
+.date{width:100%;text-align:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:10px 0;font-size:12px;letter-spacing:3px;font-weight:600}
+.feats{padding:8px 32px 0;display:flex;flex-direction:column;gap:28px}
+.feat{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding-bottom:28px;border-bottom:1px solid var(--rule)}
+.feat img{width:100%;aspect-ratio:600/290;object-fit:cover;display:block;max-width:100%}
+.feat>a{display:block;width:100%}
+.eye{margin:14px 0 0;font-size:11px;letter-spacing:3px;font-weight:700;color:var(--red)}
+h2{margin:0;font-family:var(--serif);font-weight:400;font-size:27px;text-wrap:balance}
+h2 a{color:var(--ink);text-decoration:none} h2 a:hover{color:var(--red)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:6px}
+.stats div{padding:12px 4px;display:flex;flex-direction:column;gap:4px} .stats div+div{border-left:1px solid #CCC}
+.stats b{font-size:19px;font-variant-numeric:tabular-nums} .stats span{font-size:10px;letter-spacing:1px;color:var(--muted)}
+.desc{margin:4px 0 0;font-size:14px;line-height:1.6;color:#333;max-width:480px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;padding:13px 26px;text-transform:uppercase}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn:hover{opacity:.88} a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.listhead{padding:36px 32px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.listhead h3{margin:0;font-family:var(--serif);font-weight:400;font-size:23px} .listhead i{width:48px;height:2px;background:var(--red)}
+.list{padding:6px 32px 0;font-size:13px}
+.lh,.row{display:grid;grid-template-columns:minmax(0,1fr) 150px 92px 96px;gap:10px;align-items:start}
+.lh{background:var(--ink);color:#fff;font-size:10.5px;letter-spacing:1px;font-weight:600;padding:9px 10px}
+.row{padding:10px;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums}
+.n{text-align:right} .t{text-align:center} .row .t{color:#333} .row .n{font-weight:600;white-space:nowrap}
+.row small{font-weight:400;color:var(--muted);display:none}
+.grp{background:var(--band);font-size:10.5px;letter-spacing:2px;font-weight:700;color:var(--red);text-transform:uppercase;padding:8px 10px}
+.addr{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid #BBB} .addr.plain{border:0} .ln{font-size:10px;font-weight:700;letter-spacing:1px;color:var(--red);margin-left:8px;text-transform:uppercase} .addr:hover{color:var(--red);border-color:var(--red)}
+.sub{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+.pdf{display:block;margin-top:4px;font-size:10px;letter-spacing:1px;font-weight:700;color:var(--red);text-decoration:none;text-transform:uppercase}
+.pdf::before{content:"\2193  "}
+.contact{padding:36px 32px;text-align:center;display:flex;flex-direction:column;gap:5px}
+.contact .nm{font-family:var(--serif);font-size:21px} .contact .tt{font-size:11px;letter-spacing:2px;color:var(--red);font-weight:700}
+.contact p{margin:0;font-size:14px} .contact .note{font-size:12px;color:var(--muted);margin-top:4px}
+footer{background:var(--ink);color:#fff;padding:20px 24px;text-align:center;font-size:11.5px;letter-spacing:1px;display:flex;flex-direction:column;gap:6px}
+footer span{color:#BBB;font-size:11px;letter-spacing:0}
+@media (max-width:560px){.lh{display:none} .row{grid-template-columns:1fr auto;gap:4px 12px} .row .c1{grid-column:1/-1} .row .t{grid-column:1/-1;text-align:left;font-size:12px;color:var(--muted)} .row .sf{text-align:left} .row small{display:inline} .row .rt{display:flex;gap:12px;align-items:baseline;justify-content:flex-end} .row .pdf{margin-top:0}}
+@media (max-width:520px){header,.feats,.listhead,.list,.contact{padding-left:16px;padding-right:16px} h2{font-size:23px} .stats b{font-size:16px}}
+#viewer{position:fixed;inset:0;background:rgba(20,20,20,.86);z-index:20;display:flex;flex-direction:column;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));overflow-y:auto}
+#viewer[hidden]{display:none}
+#viewer .vbar{width:100%;max-width:640px;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:12px;letter-spacing:1px;margin-bottom:10px;gap:12px}
+#viewer button{background:var(--red);color:#fff;border:0;font:700 12px var(--sans);letter-spacing:1.5px;padding:10px 14px;cursor:pointer;white-space:nowrap}
+#viewer .vb{display:flex;gap:8px} #viewer button.dk{background:#fff;color:var(--ink)}
+#vurl{width:100%;max-width:640px;font:12px var(--sans);padding:8px 10px;border:0;margin-bottom:10px;background:#fff;color:var(--ink)}
+#viewer img{width:100%;max-width:640px;height:auto;box-shadow:0 6px 30px rgba(0,0,0,.4)}
+</style></head><body>
+<div class="mail">
+<div class="redbar"></div>
+<header><img src="/broker-blast/img/logo.png" alt="Lang Real Estate Services"><div class="date">DFW AVAILABILITIES · [MONTH YEAR]</div></header>
+<div class="feats"><article class="feat"><a href="/broker-blast/flyers/10850-harry-hines.pdf" target="_blank" rel="noopener"><img src="/broker-blast/img/feat1.jpg" alt="10850 Harry Hines Blvd"></a>
+<p class="eye">FEATURED · SHOWROOM / WAREHOUSE</p><h2><a href="https://www.loopnet.com/Listing/10850-Harry-Hines-Blvd-Dallas-TX/35832082/" target="_blank" rel="noopener">10850 Harry Hines Blvd</a></h2>
+<div class="stats"><div><b>62,181 SF</b><span>AVAILABLE</span></div><div><b>2 × 30,000</b><span>DIVISIBLE</span></div><div><b>[RATE]</b><span>ASKING</span></div></div><p class="desc">18&#x27;–22&#x27; clear and fully sprinklered, with grade-level and dock loading. 10,000 SF of HVAC office and showroom, 8 private offices and 2 conference rooms. Outside storage available. Minutes to Love Field and I-35.</p>
+<div class="btns"><a class="btn" href="/broker-blast/flyers/10850-harry-hines.pdf" target="_blank" rel="noopener">View Flyer</a><a class="btn ghost" href="https://www.loopnet.com/Listing/10850-Harry-Hines-Blvd-Dallas-TX/35832082/" target="_blank" rel="noopener">View on LoopNet</a></div></article><article class="feat"><a href="/broker-blast/flyers/7129-harry-hines.pdf" target="_blank" rel="noopener"><img src="/broker-blast/img/feat2.jpg" alt="7129 Harry Hines Blvd"></a>
+<p class="eye">FEATURED · OFFICE SHOWROOM / WAREHOUSE</p><h2>7129 Harry Hines Blvd</h2>
+<div class="stats"><div><b>9,200 SF</b><span>BUILDING</span></div><div><b>18,000 SF</b><span>YARD</span></div><div><b>$18 NNN</b><span>PER SF / YR</span></div></div><p class="desc">Fenced outside storage on the corner of Harry Hines and Empire Central. 3 ramp doors and 1 dock, 100% climate controlled.</p>
+<div class="btns"><a class="btn" href="/broker-blast/flyers/7129-harry-hines.pdf" target="_blank" rel="noopener">View Flyer</a></div></article></div>
+<div class="listhead"><h3>Full Availability List</h3><i></i></div>
+<div class="list"><div class="lh"><span>PROPERTY</span><span class="t">TYPE</span><span class="n">SF</span><span class="n">RATE</span></div><div class="grp">Warehouse &amp; Industrial</div><div class="row"><div class="c1"><a class="addr" href="https://www.loopnet.com/Listing/10850-Harry-Hines-Blvd-Dallas-TX/35832082/" target="_blank" rel="noopener">10850 Harry Hines Blvd<span class="ln">LoopNet ↗</span></a><span class="sub"></span></div>
+<div class="t">Showroom / Warehouse</div><div class="n sf">62,181<small> SF</small></div><div class="n rt">Call for rate<a class="pdf" href="/broker-blast/flyers/10850-harry-hines.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="row"><div class="c1"><span class="addr plain">9233 Denton Dr · Suite 200</span><span class="sub">30&#x27; clear · 4 docks · heavy power</span></div>
+<div class="t">Warehouse &amp; Outside Storage</div><div class="n sf">35,784<small> SF</small></div><div class="n rt">$9 Gross<a class="pdf" href="/broker-blast/flyers/9233-denton.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="row"><div class="c1"><span class="addr plain">1350 Chemical St</span><span class="sub">Dock-high · renovated 2026</span></div>
+<div class="t">Office Showroom / Warehouse</div><div class="n sf">4,000<small> SF</small></div><div class="n rt">$16 NNN<a class="pdf" href="/broker-blast/flyers/1350-chemical.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="row"><div class="c1"><span class="addr plain">1835 Empire Central · Suite O</span><span class="sub">Love Field</span></div>
+<div class="t">Office / Warehouse</div><div class="n sf">3,612<small> SF</small></div><div class="n rt">$14 NNN<a class="pdf" href="/broker-blast/flyers/1835-empire-central-o.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="row"><div class="c1"><span class="addr plain">10850 Harry Hines · Parking Lot</span><span class="sub">40–60 spaces · fenced</span></div>
+<div class="t">Outside Storage</div><div class="n sf">12,000–18,000<small> SF</small></div><div class="n rt">$3–4<a class="pdf" href="/broker-blast/flyers/10850-harry-hines-lot.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="grp">Showroom &amp; Flex</div><div class="row"><div class="c1"><span class="addr plain">2285 Vantage St</span><span class="sub">Design District · dock-high</span></div>
+<div class="t">Creative Office / Showroom</div><div class="n sf">3,005<small> SF</small></div><div class="n rt">$20 NNN<a class="pdf" href="/broker-blast/flyers/2285-vantage.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="row"><div class="c1"><span class="addr plain">1614 Surveyor Blvd</span><span class="sub">Carrollton · grade-level</span></div>
+<div class="t">Flex</div><div class="n sf">2,904<small> SF</small></div><div class="n rt">$14 NNN<a class="pdf" href="/broker-blast/flyers/1614-surveyor.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="row"><div class="c1"><span class="addr plain">1618 Surveyor Blvd</span><span class="sub">Carrollton · grade-level</span></div>
+<div class="t">Flex</div><div class="n sf">2,640<small> SF</small></div><div class="n rt">$14 NNN<a class="pdf" href="/broker-blast/flyers/1618-surveyor.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="grp">Office</div><div class="row"><div class="c1"><span class="addr plain">210 W 10th St</span><span class="sub">Bishop Arts · 23 parking spaces</span></div>
+<div class="t">Office</div><div class="n sf">5,476<small> SF</small></div><div class="n rt">$20 NNN<a class="pdf" href="/broker-blast/flyers/210-w-10th.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="row"><div class="c1"><span class="addr plain">105 S Zang Blvd</span><span class="sub">Bishop Arts · also for sale</span></div>
+<div class="t">Office / Retail</div><div class="n sf">1,823<small> SF</small></div><div class="n rt">$5,300 / month<a class="pdf" href="/broker-blast/flyers/105-zang.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="grp">Retail &amp; Restaurant</div><div class="row"><div class="c1"><span class="addr plain">200 W Jefferson · 2nd Floor</span><span class="sub">Bishop Arts · renovated 2025</span></div>
+<div class="t">Retail / Restaurant</div><div class="n sf">1,350–4,500<small> SF</small></div><div class="n rt">$24 NNN<a class="pdf" href="/broker-blast/flyers/200-w-jefferson.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="row"><div class="c1"><span class="addr plain">7101 Harry Hines Blvd</span><span class="sub">Kitchen equipment included</span></div>
+<div class="t">Restaurant / Retail</div><div class="n sf">2,507<small> SF</small></div><div class="n rt">$34 NNN<a class="pdf" href="/broker-blast/flyers/7101-harry-hines.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="grp">Commercial Kitchens</div><div class="row"><div class="c1"><span class="addr plain">6211 Owens St · Suite 120</span><span class="sub">Walk-in freezer &amp; cooler · vent hood</span></div>
+<div class="t">Commercial Kitchen</div><div class="n sf">2,371<small> SF</small></div><div class="n rt">$35 NNN<a class="pdf" href="/broker-blast/flyers/6211-owens-120.pdf" target="_blank" rel="noopener">Flyer</a></div></div><div class="row"><div class="c1"><span class="addr plain">2714 Bomar Ave · Suite 140</span><span class="sub">20&#x27; vent hood · walk-in cooler</span></div>
+<div class="t">Commercial Kitchen</div><div class="n sf">1,713<small> SF</small></div><div class="n rt">$40 NNN<a class="pdf" href="/broker-blast/flyers/2714-bomar-140.pdf" target="_blank" rel="noopener">Flyer</a></div></div></div>
+<div class="contact"><div class="nm">Matt Miller</div><div class="tt">VICE PRESIDENT OF BROKERAGE &amp; LEASING</div>
+<p>M 972-672-4037 · D 972-744-6439</p><p>mmiller@langrealestateservices.com</p><p class="note">[CO-OP COMMISSION TERMS]</p></div>
+<footer>LANG REAL ESTATE SERVICES · 6115 OWENS ST, SUITE 113 · DALLAS, TX 75235<span>Information About Brokerage Services · Unsubscribe</span></footer>
+<div class="redbar"></div>
+</div>
+</body></html>
