@@ -1,11 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async rewrites() {
-    return [
-      { source: "/broker-blast", destination: "/broker-blast/index.html" },
-    ];
-  },
+  /* config options here */
 };
 
 export default nextConfig;
