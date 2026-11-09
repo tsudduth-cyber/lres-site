@@ -6,7 +6,16 @@ const nextConfig: NextConfig = {
     "/listings/flyers/[slug]": ["./lib/fonts/**", "./node_modules/pdfkit/js/data/**"],
   },
   async rewrites() {
-    return [{ source: "/listings/admin", destination: "/listings-admin.html" }];
+    const host = [{ type: "host" as const, value: "listings.langrealestateservices.com" }];
+    return {
+      beforeFiles: [
+        { source: "/", has: host, destination: "/listings" },
+        { source: "/email", has: host, destination: "/listings/email" },
+        { source: "/admin", has: host, destination: "/listings-admin.html" },
+      ],
+      afterFiles: [{ source: "/listings/admin", destination: "/listings-admin.html" }],
+      fallback: [],
+    };
   },
 };
 
