@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LRES Listings</title>
+<link rel="icon" href="/logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400&family=Libre+Franklin:wght@400;600;700&display=swap">
+<style>
+:root{--ground:#EDEDED;--paper:#FFF;--ink:#1A1A1A;--muted:#666;--rule:#DDD;--red:#ED1C24;--band:#F5F5F5;--ok:#1F7A3A;
+--serif:'Libre Caslon Text',Georgia,serif;--sans:'Libre Franklin',Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:14px/1.45 var(--sans)}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:900px;margin:0 auto;background:var(--paper);min-height:100vh}
+.redbar{height:6px;background:var(--red)}
+header{display:flex;flex-direction:column;align-items:center;gap:12px;padding:24px 16px 0}
+header img{width:150px}
+.title{width:100%;text-align:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:9px 0;font-size:12px;letter-spacing:3px;font-weight:700}
+section{padding:26px 24px;border-bottom:1px solid var(--rule)}
+h2{margin:0 0 16px;text-align:center;font:400 21px var(--serif)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--red);color:#fff;border:0;padding:10px 18px;font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn.dark{background:var(--ink)} .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)} .btn.sm{padding:7px 12px;font-size:10.5px}
+.btn.link{background:none;color:var(--red);padding:4px 6px}
+.btn:disabled{opacity:.45;cursor:default}
+.row-btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.picks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+label{display:flex;flex-direction:column;gap:5px;font-size:10.5px;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{border:1px solid #BBB;background:#fff;padding:9px 10px;font-size:14px;letter-spacing:0;text-transform:none;font-weight:400;color:var(--ink);width:100%}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--red);outline-offset:-1px}
+.check{flex-direction:row;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-size:13.5px;font-weight:400;color:var(--ink)}
+.check input{width:auto}
+.center{text-align:center} .muted{color:var(--muted)} .small{font-size:12px}
+.list{border-top:1px solid var(--ink)}
+.grp{background:var(--band);font-size:10.5px;letter-spacing:2px;font-weight:700;color:var(--red);text-transform:uppercase;padding:8px 10px;display:flex;justify-content:space-between}
+.grp span{color:var(--muted)}
+.item{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px;border-bottom:1px solid var(--rule)}
+.thumb{width:64px;height:44px;background:var(--band) center/cover;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--muted);text-align:center}
+.item b{display:block}
+.meta{font-size:12px;color:var(--muted)}
+.badge{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 6px;margin-left:6px;vertical-align:1px}
+.b-ok{background:#E6F2EA;color:var(--ok)} .b-no{background:var(--band);color:var(--muted)} .b-red{background:var(--red);color:#fff}
+.alerts{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.alert{display:flex;gap:12px;align-items:center;justify-content:space-between;border:1px solid var(--rule);border-left:4px solid var(--red);padding:10px 12px}
+.alert.info{border-left-color:var(--ink)}
+.alert .t{min-width:0}
+.alert .t b{display:block}
+.props{columns:2;column-gap:24px;margin:10px 0 16px}
+.props label{break-inside:avoid;margin:0 0 6px}
+.clear{color:var(--ok);font-weight:600;text-align:center;margin-top:14px}
+.banner{background:#FFF4D6;border-bottom:1px solid #E8D590;padding:10px 16px;text-align:center;font-size:13px}
+/* editor */
+.ed{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;justify-content:center;overflow:auto;z-index:10;padding:20px 10px}
+.ed[hidden]{display:none}
+.panel{background:#fff;width:100%;max-width:760px;align-self:flex-start}
+.panel header{padding-bottom:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:20px 24px}
+.grid .full{grid-column:1/-1}
+.photos{display:flex;flex-wrap:wrap;gap:10px}
+.ph{width:132px;display:flex;flex-direction:column;gap:4px}
+.ph div{height:88px;background:var(--band) center/cover;position:relative}
+.ph .main{position:absolute;left:0;top:0;background:var(--red);color:#fff;font-size:9px;font-weight:700;letter-spacing:1px;padding:2px 5px}
+.ph nav{display:flex;justify-content:space-between}
+.ph nav button{border:1px solid var(--rule);background:#fff;cursor:pointer;padding:2px 8px}
+.foot{display:flex;justify-content:space-between;gap:10px;padding:16px 24px;border-top:1px solid var(--rule);position:sticky;bottom:0;background:#fff}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;font-size:13px;z-index:20}
+.toast[hidden]{display:none}
+.login{max-width:320px;margin:30px auto;display:flex;flex-direction:column;gap:12px}
+@media (max-width:640px){
+  section{padding:22px 14px} .picks,.grid{grid-template-columns:1fr} .grid{padding:16px 14px}
+  .props{columns:1} .alert{flex-direction:column;align-items:stretch} .item{grid-template-columns:56px minmax(0,1fr)} .item .btn{grid-column:1/-1}
+  .thumb{width:56px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="redbar"></div>
+  <div id="banner"></div>
+  <header><img src="/logo.png" alt="Lang Real Estate Services"><div class="title">LISTINGS</div></header>
+  <div id="app"></div>
+</div>
+<div class="ed" id="ed" hidden></div>
+<div class="toast" id="toast" hidden></div>
+<input type="file" id="rrFile" accept=".csv,text/csv" hidden>
+
+<script>
+const GROUPS=["Warehouse & Industrial","Showroom & Flex","Office","Retail & Restaurant","Commercial Kitchens"];
+let doc=null, storage="", rr=null, editing=null;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const sfNum=l=>parseInt((l.sf||"").split(/[–-]/)[0].replace(/[^0-9]/g,"")||"0",10);
+const sorted=()=>[...doc.listings].sort((a,b)=>GROUPS.indexOf(a.group)-GROUPS.indexOf(b.group)||sfNum(b)-sfNum(a));
+const short=p=>p.split(" - ")[0];
+function toast(m){const t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2600)}
+
+async function api(path,opts={}){
+  const r=await fetch(path,opts);
+  const j=await r.json().catch(()=>({}));
+  if(r.status===401){showLogin();throw new Error("signin")}
+  if(!r.ok){toast(j.error||"Something went wrong");if(r.status===409&&j.doc){doc=j.doc;render()}throw new Error(j.error)}
+  return j;
+}
+async function save(msg="Saved"){
+  const j=await api("/api/data",{method:"PUT",headers:{"content-type":"application/json"},body:JSON.stringify(doc)});
+  doc=j.doc;render();toast(msg);
+}
+
+function showLogin(){
+  $("#app").innerHTML=`<section><div class="login"><label>Password<input type="password" id="pw" autocomplete="current-password"></label><button class="btn" id="go">Sign in</button><p class="center small muted" id="err"></p></div></section>`;
+  const go=async()=>{const r=await fetch("/api/login",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({password:$("#pw").value})});
+    if(r.ok)boot();else $("#err").textContent=(await r.json().catch(()=>({}))).error||"Couldn't sign in";};
+  $("#go").onclick=go;$("#pw").onkeydown=e=>{if(e.key==="Enter")go()};$("#pw").focus();
+}
+
+async function boot(){
+  const j=await api("/api/data");doc=j.doc;storage=j.storage;
+  rr=await api("/api/appfolio");
+  render();
+}
+
+function opts(sel){return `<option value="">—</option>`+sorted().map(l=>`<option value="${esc(l.id)}"${l.id===sel?" selected":""}>${esc(l.addr)} · ${esc(l.sf)}</option>`).join("")}
+
+function render(){
+  $("#banner").innerHTML=storage==="readonly"?`<div class="banner">Saving is off until storage is connected.</div>`:"";
+  const f=doc.settings.featured;
+  const L=sorted();
+  let list="",cur="";
+  for(const l of L){
+    if(l.group!==cur){cur=l.group;list+=`<div class="grp">${esc(cur)}<span>${L.filter(x=>x.group===cur).length}</span></div>`}
+    const af=l.appfolio?`<span class="badge b-ok">AppFolio</span>`:`<span class="badge b-no">Not in AppFolio</span>`;
+    const hold=l.hold?`<span class="badge b-no">Kept listed</span>`:"";
+    const feat=f.includes(l.id)?`<span class="badge b-red">Featured</span>`:"";
+    list+=`<div class="item"><div class="thumb" style="${l.photos[0]?`background-image:url('${esc(l.photos[0])}')`:""}">${l.photos[0]?"":"No photo"}</div>
+      <div><b>${esc(l.addr)}${feat}</b><div class="meta">${esc(l.type)} · ${esc(l.sf)} · ${esc(l.rate)} ${af}${hold}</div></div>
+      <button class="btn ghost sm" data-edit="${esc(l.id)}">Edit</button></div>`;
+  }
+  $("#app").innerHTML=`
+  <section>
+    <h2>This Month's Email</h2>
+    <div class="picks">
+      <label>Featured property 1<select id="f0">${opts(f[0])}</select></label>
+      <label>Featured property 2<select id="f1">${opts(f[1])}</select></label>
+      <label style="grid-column:1/-1">Co-op terms line<input id="coop" value="${esc(doc.settings.coop)}"></label>
+    </div>
+    <div class="row-btns">
+      <a class="btn ghost" href="/listings?preview=${Date.now()}" target="_blank">Preview page</a>
+      <a class="btn ghost" href="/listings/email?preview=${Date.now()}" target="_blank">Preview email</a>
+      <button class="btn" id="copy">Copy email for Constant Contact</button>
+    </div>
+  </section>
+  <section>
+    <h2>AppFolio Check</h2>
+    <div class="row-btns"><button class="btn dark" id="upRR">Upload rent roll</button></div>
+    <p class="center small muted">${rr&&!rr.none?`Last report: ${new Date(rr.at).toLocaleString()}`:"No report yet. AppFolio → Reports → Rent Roll → export CSV."}</p>
+    <div id="review"></div>
+  </section>
+  <section>
+    <h2>Listings</h2>
+    <div class="row-btns" style="margin-bottom:16px"><button class="btn" id="add">Add listing</button></div>
+    <div class="list">${list}</div>
+  </section>`;
+  $("#f0").onchange=$("#f1").onchange=()=>{doc.settings.featured=[$("#f0").value,$("#f1").value].filter(Boolean);save()};
+  $("#coop").onchange=()=>{doc.settings.coop=$("#coop").value;save()};
+  $("#copy").onclick=async()=>{const t=await (await fetch("/listings/email?preview="+Date.now())).text();await navigator.clipboard.writeText(t);toast("Copied — paste into a Custom Code email in Constant Contact")};
+  $("#upRR").onclick=()=>$("#rrFile").click();
+  $("#add").onclick=()=>openEditor(null);
+  document.querySelectorAll("[data-edit]").forEach(b=>b.onclick=()=>openEditor(b.dataset.edit));
+  renderReview();
+}
+
+$("#rrFile").onchange=async e=>{
+  const file=e.target.files[0];if(!file)return;
+  await api("/api/appfolio",{method:"POST",body:await file.text()});
+  e.target.value="";rr=await api("/api/appfolio");render();toast("Rent roll checked");
+};
+
+function renderReview(){
+  const box=$("#review");
+  if(!rr||rr.none){box.innerHTML="";return}
+  if(rr.firstRun){
+    box.innerHTML=`<p class="center">Check the properties we lease. Only these get watched for new vacancies.</p>
+      <div class="props">${allProps().map(p=>`<label class="check"><input type="checkbox" value="${esc(p.property)}"${doc.watch[p.property]?" checked":""}> ${esc(p.name)}${p.open?` <span class="muted small">(${p.open} vacant)</span>`:""}</label>`).join("")}</div>
+      <div class="row-btns"><button class="btn" id="saveWatch">Save</button></div>`;
+    $("#saveWatch").onclick=async()=>{box.querySelectorAll(".props input").forEach(i=>doc.watch[i.value]=i.checked);await save("Saved");rr=await api("/api/appfolio");render()};
+    return;
+  }
+  const a=[];
+  for(const x of rr.leased)a.push(`<div class="alert"><div class="t"><b>${esc(x.addr)}</b><span class="small muted">AppFolio shows ${esc(x.tenant||x.status)} — take it off the list?</span></div>
+    <div class="row-btns"><button class="btn sm" data-rm="${esc(x.id)}">Remove</button><button class="btn ghost sm" data-hold="${esc(x.id)}">Keep listed</button></div></div>`);
+  for(const x of rr.missing)a.push(`<div class="alert info"><div class="t"><b>${esc(x.addr)}</b><span class="small muted">This unit isn't in the AppFolio report anymore.</span></div>
+    <div class="row-btns"><button class="btn ghost sm" data-edit2="${esc(x.id)}">Fix link</button></div></div>`);
+  for(const x of rr.vacancies)a.push(`<div class="alert info"><div class="t"><b>${esc(x.name)}${x.unit?" · "+esc(x.unit.replace(/^.* - /,"")):""}</b><span class="small muted">New vacancy · ${x.sqft.toLocaleString()} SF${x.status!=="Vacant-Unrented"?" · "+esc(x.status):""}</span></div>
+    <div class="row-btns"><button class="btn sm" data-addv="${esc(x.property)}|${esc(x.unit)}|${x.sqft}">Add listing</button><button class="btn ghost sm" data-ign="${esc(x.property)}|${esc(x.unit)}">Ignore</button></div></div>`);
+  for(const p of rr.unknown)a.push(`<div class="alert info"><div class="t"><b>${esc(p.name)}</b><span class="small muted">New property in AppFolio — do we lease it?</span></div>
+    <div class="row-btns"><button class="btn sm" data-w1="${esc(p.property)}">We lease it</button><button class="btn ghost sm" data-w0="${esc(p.property)}">We don't</button></div></div>`);
+  box.innerHTML=a.length?`<div class="alerts">${a.join("")}</div>`:`<p class="clear">All clear.</p>`;
+  box.innerHTML+=`<p class="center"><button class="btn link" id="manageW">Properties we lease (${Object.values(doc.watch).filter(Boolean).length})</button></p>`;
+  const refresh=async m=>{await save(m);rr=await api("/api/appfolio");render()};
+  box.querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>{const id=b.dataset.rm;doc.listings=doc.listings.filter(l=>l.id!==id);doc.settings.featured=doc.settings.featured.filter(x=>x!==id);refresh("Removed")});
+  box.querySelectorAll("[data-hold]").forEach(b=>b.onclick=()=>{doc.listings.find(l=>l.id===b.dataset.hold).hold=true;refresh("Kept listed")});
+  box.querySelectorAll("[data-edit2]").forEach(b=>b.onclick=()=>openEditor(b.dataset.edit2));
+  box.querySelectorAll("[data-ign]").forEach(b=>b.onclick=()=>{doc.dismissed.push(b.dataset.ign);refresh("Ignored")});
+  box.querySelectorAll("[data-w1]").forEach(b=>b.onclick=()=>{doc.watch[b.dataset.w1]=true;refresh("Saved")});
+  box.querySelectorAll("[data-w0]").forEach(b=>b.onclick=()=>{doc.watch[b.dataset.w0]=false;refresh("Saved")});
+  box.querySelectorAll("[data-addv]").forEach(b=>b.onclick=()=>{const [p,u,sf]=b.dataset.addv.split("|");openEditor(null,{property:p,unit:u,sqft:+sf})});
+  $("#manageW").onclick=manageWatch;
+}
+
+function allProps(){const m=new Map();for(const u of rr.units||[]){if(/do not use/i.test(u.property)||u.property.startsWith("Work Orders"))continue;const p=m.get(u.property)||{property:u.property,name:short(u.property),open:0};if(/^(Vacant|Notice)-Unrented$/.test(u.status)&&u.sqft>0)p.open++;m.set(u.property,p)}
+  return [...m.values()].sort((a,b)=>a.name.localeCompare(b.name,undefined,{numeric:true}))}
+function manageWatch(){
+  const props=[...new Set([...(rr.units||[]).map(u=>u.property),...Object.keys(doc.watch)])].sort((a,b)=>short(a).localeCompare(short(b),undefined,{numeric:true}));
+  const ed=$("#ed");ed.hidden=false;
+  ed.innerHTML=`<div class="panel"><header><div class="title">PROPERTIES WE LEASE</div></header>
+    <div style="padding:20px 24px"><div class="props">${props.map(p=>`<label class="check"><input type="checkbox" value="${esc(p)}"${doc.watch[p]?" checked":""}> ${esc(short(p))}</label>`).join("")}</div></div>
+    <div class="foot"><button class="btn ghost" id="x">Cancel</button><button class="btn" id="ok">Save</button></div></div>`;
+  $("#x").onclick=()=>ed.hidden=true;
+  $("#ok").onclick=async()=>{ed.querySelectorAll(".props input").forEach(i=>doc.watch[i.value]=i.checked);ed.hidden=true;await save();rr=await api("/api/appfolio");render()};
+}
+
+/* ---------- editor ---------- */
+function blank(){return{id:"",addr:"",city:"Dallas, TX",type:"",group:GROUPS[0],sf:"",sfNote:"",rate:"",sub:"",tag:"",loopnet:"",feats:[],photos:[],blurb:"",stat2Value:"",stat2Label:"",flyerPdf:"",appfolio:null,hold:false}}
+const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+
+function openEditor(id,fromVacancy){
+  const src=id?doc.listings.find(l=>l.id===id):blank();
+  editing=JSON.parse(JSON.stringify(src));
+  if(fromVacancy){editing.appfolio={property:fromVacancy.property,unit:fromVacancy.unit};editing.sf=fromVacancy.sqft.toLocaleString()+" SF";editing.addr=short(fromVacancy.property)+(fromVacancy.unit?" · "+fromVacancy.unit.replace(/^.* - /,""):"")}
+  drawEditor(!id);
+}
+
+function afProps(){return [...new Set((rr&&rr.units||[]).map(u=>u.property))].sort((a,b)=>short(a).localeCompare(short(b),undefined,{numeric:true}))}
+function afUnits(p){return (rr&&rr.units||[]).filter(u=>u.property===p)}
+
+function drawEditor(isNew){
+  const e=editing,ed=$("#ed");ed.hidden=false;
+  const ps=afProps(),ap=e.appfolio?.property||"";
+  const unitOpts=ap?afUnits(ap).map(u=>`<option value="${esc(u.unit)}"${u.unit===e.appfolio?.unit?" selected":""}>${esc(u.unit||"(whole property)")} · ${esc(u.status)}${u.sqft?" · "+u.sqft.toLocaleString()+" SF":""}</option>`).join(""):"";
+  ed.innerHTML=`<div class="panel"><header><div class="title">${isNew?"NEW LISTING":"EDIT LISTING"}</div></header>
+  <div class="grid">
+    <label class="full">Address<input data-k="addr" value="${esc(e.addr)}" placeholder="1835 Empire Central · Suite P"></label>
+    <label>City<input data-k="city" value="${esc(e.city)}"></label>
+    <label>Group<select data-k="group">${GROUPS.map(g=>`<option${g===e.group?" selected":""}>${g}</option>`).join("")}</select></label>
+    <label>Type<input data-k="type" value="${esc(e.type)}" placeholder="Office / Warehouse"></label>
+    <label>Tag<input data-k="tag" value="${esc(e.tag)}" placeholder="New, Renovated…"></label>
+    <label>Size<input data-k="sf" value="${esc(e.sf)}" placeholder="3,612 SF"></label>
+    <label>Size note<input data-k="sfNote" value="${esc(e.sfNote)}" placeholder="Divisible to 2 × 30,000"></label>
+    <label>Rate<input data-k="rate" value="${esc(e.rate)}" placeholder="$14 / SF NNN"></label>
+    <label>One-line detail (list)<input data-k="sub" value="${esc(e.sub)}" placeholder="Love Field · dock-high"></label>
+    <label class="full">LoopNet link<input data-k="loopnet" value="${esc(e.loopnet)}" placeholder="https://www.loopnet.com/Listing/…"></label>
+    <label class="full">Features (one per line)<textarea data-k="feats">${esc(e.feats.join("\n"))}</textarea></label>
+    <label class="full">Featured description<textarea data-k="blurb" style="min-height:70px" placeholder="Used when this property is featured. Leave blank to use the first features.">${esc(e.blurb)}</textarea></label>
+    <label>Featured 2nd stat<input data-k="stat2Value" value="${esc(e.stat2Value)}" placeholder="18,000 SF"></label>
+    <label>2nd stat label<input data-k="stat2Label" value="${esc(e.stat2Label)}" placeholder="YARD"></label>
+    <div class="full"><label>Photos — first one is the main photo</label>
+      <div class="photos" style="margin-top:8px">${e.photos.map((u,i)=>`<div class="ph"><div style="background-image:url('${esc(u)}')">${i===0?'<span class="main">MAIN</span>':""}</div>
+        <nav><button data-pl="${i}" title="Move left">◀</button><button data-px="${i}" title="Remove">✕</button><button data-pr="${i}" title="Move right">▶</button></nav></div>`).join("")}</div>
+      <div class="row-btns" style="justify-content:flex-start;margin-top:10px"><button class="btn ghost sm" id="addPh">Add photos</button><input type="file" id="phFile" accept="image/*" multiple hidden></div></div>
+    <div class="full"><label>Flyer</label>
+      <p class="small" style="margin:6px 0">${e.flyerPdf?`Using an uploaded flyer. <a href="${esc(e.flyerPdf)}" target="_blank">Open</a> · <button class="btn link" id="rmPdf">Go back to the auto flyer</button>`:(isNew?"The flyer builds itself from this listing.":`Builds itself from this listing. <a href="/listings/flyers/${esc(e.id)}.pdf?v=${Date.now()}" target="_blank">Open flyer</a>`)}</p>
+      <button class="btn ghost sm" id="addPdf">Upload a custom flyer PDF</button><input type="file" id="pdfFile" accept="application/pdf" hidden></div>
+    <div class="full"><label>AppFolio unit</label>
+      ${ps.length?`<div class="picks" style="margin:8px 0 6px"><select id="afP"><option value="">Not in AppFolio</option>${ps.map(p=>`<option value="${esc(p)}"${p===ap?" selected":""}>${esc(short(p))}</option>`).join("")}</select>
+      <select id="afU"${ap?"":" disabled"}>${unitOpts}</select></div>`:`<p class="small muted">Upload a rent roll to link this to AppFolio.</p>`}
+      <label class="check"><input type="checkbox" data-k="hold"${e.hold?" checked":""}> Keep listed even if AppFolio shows it leased</label></div>
+  </div>
+  <div class="foot"><div>${isNew?"":`<button class="btn ghost" id="del">Delete</button>`}</div><div class="row-btns"><button class="btn ghost" id="cancel">Cancel</button><button class="btn" id="saveL">Save</button></div></div></div>`;
+
+  ed.querySelectorAll("[data-k]").forEach(i=>i.oninput=i.onchange=()=>{const k=i.dataset.k;
+    e[k]=k==="feats"?i.value.split("\n").map(s=>s.trim()).filter(Boolean):k==="hold"?i.checked:i.value});
+  const afP=$("#afP");if(afP){afP.onchange=()=>{e.appfolio=afP.value?{property:afP.value,unit:(afUnits(afP.value)[0]||{}).unit||""}:null;drawEditor(isNew)};
+    $("#afU").onchange=()=>{e.appfolio.unit=$("#afU").value}}
+  ed.querySelectorAll("[data-pl]").forEach(b=>b.onclick=()=>{const i=+b.dataset.pl;if(i>0){[e.photos[i-1],e.photos[i]]=[e.photos[i],e.photos[i-1]];drawEditor(isNew)}});
+  ed.querySelectorAll("[data-pr]").forEach(b=>b.onclick=()=>{const i=+b.dataset.pr;if(i<e.photos.length-1){[e.photos[i+1],e.photos[i]]=[e.photos[i],e.photos[i+1]];drawEditor(isNew)}});
+  ed.querySelectorAll("[data-px]").forEach(b=>b.onclick=()=>{e.photos.splice(+b.dataset.px,1);drawEditor(isNew)});
+  $("#addPh").onclick=()=>$("#phFile").click();
+  $("#phFile").onchange=async ev=>{for(const f of ev.target.files){toast("Uploading…");const blob=await shrink(f);e.photos.push(await upload(blob,f.name.replace(/\.\w+$/,"")+".jpg"))}drawEditor(isNew);toast("Photo added")};
+  $("#addPdf").onclick=()=>$("#pdfFile").click();
+  $("#pdfFile").onchange=async ev=>{const f=ev.target.files[0];if(!f)return;if(f.size>4.3e6){toast("PDF must be under 4 MB");return}toast("Uploading…");e.flyerPdf=await upload(f,f.name);drawEditor(isNew)};
+  const rm=$("#rmPdf");if(rm)rm.onclick=()=>{e.flyerPdf="";drawEditor(isNew)};
+  $("#cancel").onclick=()=>{ed.hidden=true};
+  const del=$("#del");if(del)del.onclick=async()=>{if(!confirm("Delete "+e.addr+"?"))return;doc.listings=doc.listings.filter(l=>l.id!==e.id);doc.settings.featured=doc.settings.featured.filter(x=>x!==e.id);ed.hidden=true;await save("Deleted")};
+  $("#saveL").onclick=async()=>{
+    if(!e.addr.trim()||!e.sf.trim()){toast("Address and size are required");return}
+    if(!e.id){let s=slug(e.addr),n=2;while(doc.listings.some(l=>l.id===s))s=slug(e.addr)+"-"+n++;e.id=s;doc.listings.push(e)}
+    else doc.listings=doc.listings.map(l=>l.id===e.id?e:l);
+    ed.hidden=true;await save();if(rr&&!rr.none){rr=await api("/api/appfolio");render()}
+  };
+}
+
+async function upload(blob,name){
+  const fd=new FormData();fd.append("file",blob,name);
+  const j=await api("/api/upload",{method:"POST",body:fd});return j.url;
+}
+function shrink(file,max=2000){
+  return new Promise((res,rej)=>{const img=new Image();img.onload=()=>{const s=Math.min(1,max/Math.max(img.width,img.height));
+    const c=document.createElement("canvas");c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);
+    c.getContext("2d").drawImage(img,0,0,c.width,c.height);c.toBlob(b=>b?res(b):rej(),"image/jpeg",0.85);URL.revokeObjectURL(img.src)};
+    img.onerror=()=>rej(new Error("Couldn't read that photo"));img.src=URL.createObjectURL(file)});
+}
+
+boot().catch(()=>{});
+</script>
+</body>
+</html>

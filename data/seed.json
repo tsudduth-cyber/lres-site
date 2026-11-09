@@ -1,0 +1,392 @@
+{
+ "rev": 1,
+ "listings": [
+  {
+   "id": "10850-harry-hines",
+   "addr": "10850 Harry Hines Blvd",
+   "city": "Dallas, TX 75220",
+   "type": "Showroom / Warehouse",
+   "group": "Warehouse & Industrial",
+   "sf": "62,181 SF",
+   "sfNote": "Divisible to 2 × 30,000",
+   "rate": "[RATE]",
+   "sub": "",
+   "tag": "",
+   "loopnet": "https://www.loopnet.com/Listing/10850-Harry-Hines-Blvd-Dallas-TX/35832082/",
+   "feats": [
+    "18'–22' clear height, fully sprinklered",
+    "4 grade-level and 2 dock-high doors",
+    "10,000 SF HVAC office and showroom",
+    "8 private offices and 2 conference rooms",
+    "Outside storage available",
+    "High traffic, high visibility on Harry Hines",
+    "Minutes to Love Field and I-35"
+   ],
+   "photos": [
+    "/seed/10850-standin.jpg"
+   ],
+   "blurb": "18'–22' clear, fully sprinklered, grade-level and dock loading. 10,000 SF of HVAC office and showroom. Outside storage available.",
+   "stat2Value": "2 × 30,000",
+   "stat2Label": "DIVISIBLE",
+   "flyerPdf": "",
+   "appfolio": {
+    "property": "10850 Harry Hines - 10850 Harry Hines Blvd Dallas, TX 75220",
+    "unit": "100"
+   },
+   "hold": true
+  },
+  {
+   "id": "7129-harry-hines",
+   "addr": "7129 Harry Hines Blvd",
+   "city": "Dallas, TX 75235",
+   "type": "Office Showroom / Warehouse",
+   "group": "Warehouse & Industrial",
+   "sf": "9,200 SF",
+   "sfNote": "Plus 18,000 SF fenced yard",
+   "rate": "$18 / SF NNN",
+   "sub": "18,000 SF fenced yard",
+   "tag": "",
+   "loopnet": "",
+   "feats": [
+    "Fenced outside storage",
+    "100% climate controlled",
+    "3 ramped doors and 1 dock",
+    "Corner of Harry Hines and Empire Central",
+    "±1.6 acres of additional land available",
+    "Breakroom / kitchen"
+   ],
+   "photos": [
+    "/seed/7129.jpg"
+   ],
+   "blurb": "Fenced outside storage on the corner of Harry Hines and Empire Central. 3 ramp doors and 1 dock, 100% climate controlled.",
+   "stat2Value": "18,000 SF",
+   "stat2Label": "YARD",
+   "flyerPdf": "",
+   "appfolio": null,
+   "hold": false
+  },
+  {
+   "id": "1350-chemical",
+   "addr": "1350 Chemical St",
+   "city": "Dallas, TX 75207",
+   "type": "Office Showroom / Warehouse",
+   "group": "Warehouse & Industrial",
+   "sf": "4,000 SF",
+   "sfNote": "Renovated in 2026",
+   "rate": "$16 / SF NNN",
+   "sub": "Dock-high · renovated 2026",
+   "tag": "Just renovated",
+   "loopnet": "",
+   "feats": [
+    "Dock-high loading",
+    "100% climate controlled",
+    "Full kitchen",
+    "One private office",
+    "Near Dallas Love Field"
+   ],
+   "photos": [
+    "/seed/1350.jpg"
+   ],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": null,
+   "hold": false
+  },
+  {
+   "id": "1835-empire-central-p",
+   "addr": "1835 Empire Central · Suite P",
+   "city": "Dallas, TX 75235",
+   "type": "Office / Warehouse",
+   "group": "Warehouse & Industrial",
+   "sf": "3,612 SF",
+   "sfNote": "61,812 SF development",
+   "rate": "$14 / SF NNN",
+   "sub": "Love Field",
+   "tag": "",
+   "loopnet": "https://www.loopnet.com/Listing/1835-Empire-Central-Dr-Dallas-TX/26847446/",
+   "feats": [
+    "Part of a 61,812 SF office warehouse development",
+    "Love Field industrial area",
+    "Office plus warehouse space"
+   ],
+   "photos": [],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": {
+    "property": "1835 Empire Central - 1835 Empire Central Drive Dallas, TX 75235",
+    "unit": "Unit P"
+   },
+   "hold": false
+  },
+  {
+   "id": "10850-harry-hines-lot",
+   "addr": "10850 Harry Hines · Parking Lot",
+   "city": "Dallas, TX 75220",
+   "type": "Outside Storage",
+   "group": "Warehouse & Industrial",
+   "sf": "12,000–18,000 SF",
+   "sfNote": "40–60 spaces",
+   "rate": "$3–4 / SF",
+   "sub": "40–60 spaces · fenced",
+   "tag": "",
+   "loopnet": "",
+   "feats": [
+    "Fenced outside storage",
+    "Materials, fleets and equipment",
+    "40–60 parking spaces",
+    "Harry Hines frontage"
+   ],
+   "photos": [],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": null,
+   "hold": false
+  },
+  {
+   "id": "2285-vantage",
+   "addr": "2285 Vantage St",
+   "city": "Dallas, TX 75207",
+   "type": "Creative Office / Showroom",
+   "group": "Showroom & Flex",
+   "sf": "3,005 SF",
+   "sfNote": "Dallas Design District",
+   "rate": "$20 / SF NNN",
+   "sub": "Design District · dock-high",
+   "tag": "",
+   "loopnet": "",
+   "feats": [
+    "Open concept, front load",
+    "Exposed ceilings and skylights",
+    "Sealed concrete floors",
+    "Dock-high loading",
+    "100% HVAC",
+    "2 private restrooms and kitchenette"
+   ],
+   "photos": [
+    "/seed/2285.jpg"
+   ],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": null,
+   "hold": false
+  },
+  {
+   "id": "1618-surveyor",
+   "addr": "1618 Surveyor Blvd",
+   "city": "Carrollton, TX 75006",
+   "type": "Flex",
+   "group": "Showroom & Flex",
+   "sf": "2,640 SF",
+   "sfNote": "Office, showroom, warehouse",
+   "rate": "$14 / SF NNN",
+   "sub": "Carrollton · grade-level",
+   "tag": "Renovated",
+   "loopnet": "https://www.loopnet.com/Listing/1604-1620-Surveyor-Blvd-Carrollton-TX/16312358/",
+   "feats": [
+    "Grade-level loading",
+    "100% HVAC",
+    "Newly renovated interior and exterior"
+   ],
+   "photos": [],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": {
+    "property": "1604 Surveyor - 1604 Surveyor Blvd Carrollton, TX 75006",
+    "unit": "1618"
+   },
+   "hold": false
+  },
+  {
+   "id": "210-w-10th",
+   "addr": "210 W 10th St",
+   "city": "Dallas, TX 75208",
+   "type": "Office",
+   "group": "Office",
+   "sf": "5,476 SF",
+   "sfNote": "Near Bishop Arts",
+   "rate": "$20 / SF NNN",
+   "sub": "Bishop Arts · 23 parking spaces",
+   "tag": "",
+   "loopnet": "",
+   "feats": [
+    "Elevator to 2nd floor",
+    "23 parking spaces, 6 covered",
+    "Near the Bishop Arts District"
+   ],
+   "photos": [],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": null,
+   "hold": false
+  },
+  {
+   "id": "105-zang",
+   "addr": "105 S Zang Blvd",
+   "city": "Dallas, TX 75208",
+   "type": "Office / Retail",
+   "group": "Office",
+   "sf": "1,823 SF",
+   "sfNote": "Also for sale",
+   "rate": "$5,300 / month",
+   "sub": "Bishop Arts · also for sale",
+   "tag": "",
+   "loopnet": "https://www.loopnet.com/Listing/105-S-Zang-Blvd-Dallas-TX/38760299/",
+   "feats": [
+    "Reception, conference room and bullpen",
+    "Kitchen, storage room and restroom",
+    "On-site parking",
+    "Near the Bishop Arts District",
+    "Also available for sale"
+   ],
+   "photos": [],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": null,
+   "hold": false
+  },
+  {
+   "id": "200-w-jefferson",
+   "addr": "200 W Jefferson · 2nd Floor",
+   "city": "Dallas, TX 75208",
+   "type": "Retail / Restaurant",
+   "group": "Retail & Restaurant",
+   "sf": "1,350–4,500 SF",
+   "sfNote": "Four 2nd-floor suites",
+   "rate": "$24 / SF NNN",
+   "sub": "Bishop Arts · renovated 2025",
+   "tag": "",
+   "loopnet": "https://www.loopnet.com/Listing/200-W-Jefferson-Blvd-Dallas-TX/39934601/",
+   "feats": [
+    "Renovated in 2025",
+    "Brick and block construction",
+    "Elevator to 2nd floor",
+    "Open layout",
+    "Near the Bishop Arts District"
+   ],
+   "photos": [],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": null,
+   "hold": false
+  },
+  {
+   "id": "7101-harry-hines",
+   "addr": "7101 Harry Hines Blvd",
+   "city": "Dallas, TX 75235",
+   "type": "Restaurant / Retail",
+   "group": "Retail & Restaurant",
+   "sf": "2,507 SF",
+   "sfNote": "Stand-alone, corner lot",
+   "rate": "$34 / SF NNN",
+   "sub": "Kitchen equipment included",
+   "tag": "",
+   "loopnet": "https://www.loopnet.com/Listing/7101-Harry-Hines-Blvd-Dallas-TX/40512424/",
+   "feats": [
+    "Stand-alone building on a corner lot",
+    "Kitchen equipment included",
+    "Grease trap, vent hood, walk-in cooler",
+    "Flat-top, stove and beverage cooler",
+    "On-site parking"
+   ],
+   "photos": [],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": null,
+   "hold": false
+  },
+  {
+   "id": "6211-owens-120",
+   "addr": "6211 Owens St · Suite 120",
+   "city": "Dallas, TX 75235",
+   "type": "Commercial Kitchen",
+   "group": "Commercial Kitchens",
+   "sf": "2,371 SF",
+   "sfNote": "Near Dallas Love Field",
+   "rate": "$35 / SF NNN",
+   "sub": "Walk-in freezer & cooler · vent hood",
+   "tag": "",
+   "loopnet": "https://www.loopnet.com/Listing/6211-Owens-St-Dallas-TX/12290276/",
+   "feats": [
+    "Walk-in freezer and cooler",
+    "20' vent hood and grease trap",
+    "3-compartment sink, 2 hand sinks",
+    "Tilt skillet grill",
+    "Gated parking, rear grade-level loading",
+    "100% HVAC"
+   ],
+   "photos": [],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": {
+    "property": "6211 Owens - 6211 Owens St Dallas, TX 75235",
+    "unit": "120"
+   },
+   "hold": false
+  },
+  {
+   "id": "2714-bomar-140",
+   "addr": "2714 Bomar Ave · Suite 140",
+   "city": "Dallas, TX 75235",
+   "type": "Commercial Kitchen",
+   "group": "Commercial Kitchens",
+   "sf": "1,713 SF",
+   "sfNote": "Near Dallas Love Field",
+   "rate": "$40 / SF NNN",
+   "sub": "20' vent hood · walk-in cooler",
+   "tag": "",
+   "loopnet": "https://www.loopnet.com/Listing/2714-Bomar-Ave-Dallas-TX/28103137/",
+   "feats": [
+    "20' vent hood",
+    "8' x 10' walk-in cooler",
+    "3-compartment sinks",
+    "100% HVAC, grade-level loading",
+    "NNN covers grease trap cleanout, ansul inspection, trash, pest control and water"
+   ],
+   "photos": [],
+   "blurb": "",
+   "stat2Value": "",
+   "stat2Label": "",
+   "flyerPdf": "",
+   "appfolio": {
+    "property": "2714 Bomar - 2714 BomarAve Dallas, TX 75235",
+    "unit": "2714 Bomar - Suite 140"
+   },
+   "hold": false
+  }
+ ],
+ "settings": {
+  "featured": [
+   "10850-harry-hines",
+   "7129-harry-hines"
+  ],
+  "coop": "[CO-OP COMMISSION TERMS]"
+ },
+ "watch": {
+  "10850 Harry Hines - 10850 Harry Hines Blvd Dallas, TX 75220": true,
+  "1604 Surveyor - 1604 Surveyor Blvd Carrollton, TX 75006": true,
+  "6211 Owens - 6211 Owens St Dallas, TX 75235": true,
+  "2714 Bomar - 2714 BomarAve Dallas, TX 75235": true,
+  "1835 Empire Central - 1835 Empire Central Drive Dallas, TX 75235": true
+ },
+ "dismissed": []
+}
